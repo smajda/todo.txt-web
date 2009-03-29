@@ -1,0 +1,99 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height:100%;
+}
+body {
+    font-family: 'Lucida Grande', 'Verdana', sans-serif;
+}
+#container {
+    min-height: 100%;
+    position: relative;
+}
+
+h1{
+    font-size: 1.2em;
+    text-align:center;
+    padding: 0;
+}
+
+a { 
+    color: #008; 
+}
+
+
+/* form */
+div#top { 
+    overflow: hidden; 
+    padding: 0; 
+    margin: 0; 
+    background: #eee; 
+    border-bottom: solid 1px #777;
+}
+div#top form {
+    margin: 0 5% 0.5em 5%;
+}
+input#cmd{
+    width: 100%;
+    font-size: 1em;
+}
+input#sub{
+    width: 100%;
+    margin-top: 0.5em;
+    font-size: 1.0em;
+}
+
+
+/* output */
+div#output { 
+    margin: 0; 
+    padding-bottom: 3em; /* height of footer */
+}
+#results-note {
+    font-weight: bold; 
+    padding: 7px;
+}
+code {
+    font-family: 'Monaco','Courier','Courier New', monospace;
+    font-weight: normal; 
+    font-size: 1.3em;
+    background-color: #eee; 
+    padding: 2px;
+}
+ul {
+    margin: 0 5px 6px -2.2em;
+    padding-bottom: 3em;
+}
+ul li { 
+    text-indent: -1.7em;
+    padding: 0.5em 0.5 0.5em 1.7em;
+    list-style: none;
+    border-bottom: solid 1px #ccc;
+}
+
+a.todo-number {
+   color: #999;
+   text-decoration: none;
+}
+a.todo-tag {
+    text-decoration: none;
+}
+a.todo-extlink {
+    color: #770000;
+    text-decoration: none;
+}
+
+/* footer */
+div#footer {
+    position: absolute;
+    bottom: 0;
+    height: 3em;
+
+    margin: 0;
+    padding: 1em 0 0 0 ;
+    width: 100%;
+
+    background-color: #eee;
+    text-align: center;
+    border-top: solid 1px #777;
+}

@@ -1,0 +1,48 @@
+html {padding: 0;margin: 0;}
+body {
+    width: 480px; 
+    font-size: 10px;
+    line-height: 1em;
+}
+
+
+div#wrapper { padding-left: 3px; margin: 7px;}
+div#top { padding: 0; margin: 0; background: none; border-bottom: none;}
+div#top form {margin-bottom: none;}
+div#output { margin: 0; }
+
+h1{
+    padding: 0;
+    text-align: left;
+    padding-left: 20px;
+}
+
+
+/* form */
+input#cmd{
+    width:auto;
+    height:auto;
+    font-size:14px;
+}
+input#sub{
+    width: auto;
+    height:auto;
+    font-size:14px;
+    margin-top:5px;
+    margin-bottom: 0;
+}
+
+
+/* output */
+#results-note {font-size: 1.0em;}
+
+ul {
+    margin-bottom: 10px;
+}
+ul, li { 
+    padding: 2px 0 2px 8px; 
+    margin: 0;
+    list-style: none;
+    font-size:1em;
+}
+
