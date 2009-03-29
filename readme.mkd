@@ -5,7 +5,9 @@ A simple, iPhone-friendly web interface for [todo.sh](http://todotxt.com) writte
 Designed to work well in Mobile Safari on an iPhone/iPod Touch. Also tested on a Palm Centro, though the jQuery stuff doesn't work in crappy Blazer. If you try it out on other devices, let me know how it works, ok?
 
 Author: Jon Smajda
+
 License: GPL,  http://www.gnu.org/copyleft/gpl.html
+
 URL: http://github.com/smajda/todo.txt-web
 
 
@@ -44,6 +46,8 @@ URL: http://github.com/smajda/todo.txt-web
 
 
 === Credit ===
+
+Obviously, this is just a web front-end to [todo.sh](http://todotxt.com), a very cool tool that has received a lot of improvements in the last few months. Follow todo.sh development [here on github](http://github.com/ginatrapani/todo.txt-cli).
 
 I borrowed the idea and some code to get me started from [this thread](http://tech.groups.yahoo.com/group/todotxt/message/1320) on the todotxt mailing list. 
 
