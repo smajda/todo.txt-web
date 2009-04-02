@@ -53,7 +53,8 @@ function run_todo($cmd) {
        echo  "<code>".$cmd."</code></div>\n"; 
     } 
 
-    exec($todoCmd.' '.$cmd, $results);
+    $cmd = escapeshellcmd($todoCmd.' '.$cmd);
+    exec($cmd, $results);
 
     $output  = "<ul>\n";
     foreach($results as $task) {
