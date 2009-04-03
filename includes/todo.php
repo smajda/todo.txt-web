@@ -86,8 +86,9 @@ function run_todo($cmd) {
 
 function logout() {
     global $todoUrl, $user;
-    // delete cookie
-    setcookie($user,"todotxt-web", time()-3600);
+    // delete cookies
+    setcookie('todotxt-user', '', time()-3600);
+    setcookie('todotxt-pass', '', time()-3600);
     session_unset();
     echo "You have logged out. <a href=\"".$todoUrl."\">Login</a>.";
     exit();

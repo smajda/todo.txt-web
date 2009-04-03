@@ -1,13 +1,11 @@
 <?php
 /* Simple Authentication
- * 
- * You could just use .htaccess/.htpasswd but
- * but  Mobile Safari won't save these passwords
- * so we'll use a simple login form with cookies.
- * 
- * modified from: 
- * http://www.legend.ws/blog/tips-tricks/php-authentication-login-script/
-*/
+ *
+ * based on... 
+ * http://www.phpnerds.com/article/using-cookies-in-php/2
+ * and http://www.legend.ws/blog/tips-tricks/php-authentication-login-script/
+ *
+ * */
 
 function displayform($error) {
 echo <<<HTML
@@ -31,11 +29,13 @@ HTML;
     if($error) echo "<p><b>Wrong credentials.</b></p>";
 
 echo <<<HTML
-    <form id="login" action="" method="post">
+    <form name="login" id="login" action="" method="post">
             <label>username:</label>
             <input type='text' name='input_user' /><br />
             <label>password:</label>
             <input type='password' name='input_password' /><br />
+            <label>remember me?</label>
+            <input type="checkbox" name="rememberme" value="1"><br />
             <input type='Submit' value='Login&raquo;' name='loginbutton'>
     </form>
 
@@ -45,26 +45,36 @@ HTML;
 exit;
 }
 
-
 session_start();
     
-
 if(!$_SESSION['authenticated']) {
 
-    if (isset($_COOKIE[$user])) {
-       $_SESSION['authenticated'] = 1;
-    }  elseif($_POST['loginbutton']) {
-        $inputuser = $_POST['input_user'];
-        $inputpassword = $_POST['input_password'];
+    if (isset($_COOKIE['todotxt-user']) && isset($_COOKIE['todotxt-pass'])) {
 
-        if(!strcmp($inputuser ,$user) && !strcmp($inputpassword,$password)) {
-            $expire=time()+60*60*24*30;
-            setcookie($user,"todotxt-web",$expire);
+        if (($_COOKIE['todotxt-user'] == $user) && ($_COOKIE['todotxt-pass'] == md5($password))) {
             $_SESSION['authenticated'] = 1;
             header("Location:".$_SERVER[PHP_SELF]);
         } else {
             displayform(1);
         }
+
+    }  elseif($_POST['loginbutton']) {
+
+        if (($_POST['input_user'] == $user) && ($_POST['input_password'] == $password)) {
+
+            if (isset($_POST['rememberme'])) {
+                /* set cookie to last 1 month */
+                $expire=time()+60*60*24*30;
+                setcookie('todotxt-user', $_POST['input_user'], $expire);
+                setcookie('todotxt-pass', md5($_POST['input_password']), $expire);
+            } 
+            $_SESSION['authenticated'] = 1;
+            header("Location:".$_SERVER[PHP_SELF]);
+
+        } else {
+            displayform(1);
+        }
+
     } else {
         displayform(0);
     }
