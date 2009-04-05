@@ -46,3 +46,9 @@ ul, li {
     font-size:1em;
 }
 
+/* footer */
+
+div#footer {
+    padding: 1em 0 1em 0 ;
+    background-color: #fff;
+}
