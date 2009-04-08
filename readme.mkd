@@ -1,4 +1,5 @@
-=== todo.txt web interface ===
+todo.txt web interface
+======================
 
 A simple, iPhone-friendly web interface for [todo.sh](http://todotxt.com) written in PHP and spiced up with a wee bit of jQuery. 
 
@@ -10,7 +11,10 @@ Author: Jon Smajda
 License: GPL,  http://www.gnu.org/copyleft/gpl.html     
 URL: http://github.com/smajda/todo.txt-web
 
-=== Installation ===
+
+
+Installation
+-----------
 
 1. First, you need a working installation of [todo.sh](http://todotxt.com). (Presumably variants like todo.py will work, though I haven't tested them.) 
 
@@ -30,7 +34,8 @@ URL: http://github.com/smajda/todo.txt-web
 
 
 
-=== Behavior ===
+Behavior
+--------
 
 - By default, it will display whatever command you have set as `TODOTXT_DEFAULT_ACTION` in your todo config file. 
 
@@ -47,7 +52,8 @@ URL: http://github.com/smajda/todo.txt-web
 - Because I got sick of automatically doing an `ls` again right after any non-listing command: whenever you do any command that isn't an `ls`, the last `ls` command you ran is ran again and displayed right after your command's output. 
 
 
-=== Bugs/Todo List ===
+Bugs/Todo List
+-------------
 
 - Since I added `escapeshellcmd()` to filter input, parentheses now get escaped when you type in a task with the priority inline (i.e. `add "(A) do this now!"`).
 
@@ -56,7 +62,8 @@ URL: http://github.com/smajda/todo.txt-web
 - Any commands that require user confirmation (like a `mv`) won't work. One option is to add `-f` to the command arguments, but it'd be nice if there was a way to actually allow for confirmations through the web UI in some way.
 
 
-=== Credit ===
+Credit
+------
 
 Obviously, this is just a web front-end to [todo.sh](http://todotxt.com), a very cool tool that has received a lot of improvements in the last few months. Follow todo.sh development [here on github](http://github.com/ginatrapani/todo.txt-cli).
 
