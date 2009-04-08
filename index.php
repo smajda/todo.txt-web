@@ -3,8 +3,8 @@ require_once('includes/config.php');
 require_once('includes/access.php');
 require_once('includes/todo.php');
 if($_GET['logout'] == 'true') {logout();}
-$cmd = get_cmd($_GET);
-$cmd2 = get_cmd($_GET, 'cmd2');
+$cmd = get_cmd($_POST);
+$cmd2 = get_cmd($_POST, 'cmd2');
 ?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 TRANSITIONAL//EN">
 <html>
 
@@ -33,7 +33,7 @@ $cmd2 = get_cmd($_GET, 'cmd2');
 
         <h1><a href="<?php echo $todoUrl; ?>">todo.txt</a></h1>
                     
-        <form id="todo" name="todo" action="<?php echo $todoUrl; ?>" method="GET">
+        <form id="todo" name="todo" action="<?php echo $todoUrl; ?>" method="POST">
         <input autocapitalize="off" autocorrect="off" 
                type="text" id="cmd" name="cmd" 
                value="<?php if(isset($cmd)){echo $cmd." ";} ?>" /><br />

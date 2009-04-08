@@ -1,8 +1,8 @@
 <?php
 
-// process $_GET
-function get_cmd($_GET, $id='cmd') {
-    if($cmd=$_GET[$id]) {
+// process $_POST
+function get_cmd($_POST, $id='cmd') {
+    if($cmd=$_POST[$id]) {
         $cmd=rawurldecode($cmd);
         $cmd=stripslashes($cmd);
     }
