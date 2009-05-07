@@ -21,8 +21,34 @@ a {
     color: #008; 
 }
 
+/* login form */
 
-/* form */
+div#login-box {
+    padding: 1em 10% 3em 10%;
+}
+form#login input.wide {
+    margin-bottom: 7px;
+    width: 100%;
+    font-size: 1em;
+}
+form#login input#rememberme {
+    margin-bottom: 2em;
+}
+
+span.auth-message {
+    display: block;
+    margin: 2em auto 1em auto;
+    padding: 1em;
+    width: 40%;
+    border: solid 1pt #777;
+    background-color: #eee;
+    text-align: center;
+}
+
+
+
+
+/* todo form */
 div#top { 
     overflow: hidden; 
     padding: 0; 

@@ -90,7 +90,7 @@ function logout() {
     setcookie('todotxt-user', '', time()-3600);
     setcookie('todotxt-pass', '', time()-3600);
     session_unset();
-    echo "You have logged out. <a href=\"".$todoUrl."\">Login</a>.";
+    displayform(0);
     exit();
 }
 

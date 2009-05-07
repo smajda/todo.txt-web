@@ -8,38 +8,50 @@
  * */
 
 function displayform($error) {
+global $todoUrl;
 echo <<<HTML
 <html>
     <head>
-        <title>todotxt login</title>
-        <meta name="viewport" content="width=480" />
+        <title>todo.txt login</title>
+        <meta name="viewport" content="initial-scale=1.0,maximum-scale=1,user-scalable=0" />
 		<link media="screen" href="stylesheet.css" rel="stylesheet" type="text/css">
-		<link media="handheld" href="handset.css" rel="stylesheet" type="text/css">
-        <style type="text/css">
-        body {margin: 10px;}
-        form#login input {
-            margin-bottom: 7px;
-        }
-        </style>
+		<link media="handheld" href="handheld.css" rel="stylesheet" type="text/css">
+
     </head>
     <body>
 
+    <div id="container">
+    <div id="top">
+        <h1><a href="$todoUrl">todo.txt</a></h1>
+    </div>
+
 HTML;
 
-    if($error) echo "<p><b>Wrong credentials.</b></p>";
+    if($error) 
+        echo "<span class=\"auth-message\">Wrong credentials.</span>";
+    if(isset($_GET['logout'])) 
+        echo "<span class=\"auth-message\">You have logged out.</span>";
 
 echo <<<HTML
-    <form name="login" id="login" action="" method="post">
-            <label>username:</label>
-            <input type='text' name='input_user' /><br />
-            <label>password:</label>
-            <input type='password' name='input_password' /><br />
-            <label>remember me?</label>
-            <input type="checkbox" name="rememberme" value="1"><br />
-            <input type='Submit' value='Login&raquo;' name='loginbutton'>
-    </form>
+    <div id="login-box"> 
 
-    </body>
+        <form name="login" id="login" action="${todoUrl}" method="post">
+                <label>username:</label><br />
+                <input autocapitalize="off" autocorrect="off" 
+                       class="wide" type='text' name='input_user' /><br />
+                <label>password:</label><br />
+                <input class="wide" type='password' name='input_password' /><br />
+                <input type="checkbox" name="rememberme" id="rememberme" value="1">
+                <label>remember me?</label><br />
+                <input class="wide" type='Submit' value='Login&raquo;' name='loginbutton'>
+        </form>
+    </div>
+
+    <div id="footer">
+    </div>
+
+    </div>
+</body>
 </html>
 HTML;
 exit;
@@ -69,7 +81,7 @@ if(!$_SESSION['authenticated']) {
                 setcookie('todotxt-pass', md5($_POST['input_password']), $expire);
             } 
             $_SESSION['authenticated'] = 1;
-            header("Location:".$_SERVER[PHP_SELF]);
+            header("Location:".$todoURL);
 
         } else {
             displayform(1);
