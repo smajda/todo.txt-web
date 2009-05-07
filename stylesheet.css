@@ -74,6 +74,7 @@ input#sub{
 div#output { 
     margin: 0; 
     padding-bottom: 3em; /* height of footer */
+    -webkit-text-size-adjust:none;
 }
 #results-note {
     font-weight: bold; 
