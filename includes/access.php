@@ -12,6 +12,7 @@ global $todoUrl;
 echo <<<HTML
 <html>
     <head>
+        <meta http-equiv="Content-type" value="text/html; charset=utf-8">
         <title>todo.txt login</title>
         <meta name="viewport" content="initial-scale=1.0,maximum-scale=1,user-scalable=0" />
 		<link media="screen" href="stylesheet.css" rel="stylesheet" type="text/css">

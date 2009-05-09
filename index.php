@@ -7,8 +7,8 @@ $cmd = get_cmd($_POST);
 $cmd2 = get_cmd($_POST, 'cmd2');
 ?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 TRANSITIONAL//EN">
 <html>
-
 <head>
+        <meta http-equiv="Content-type" value="text/html; charset=utf-8">
 		<title>todo.txt</title>
 
        <meta name="viewport" content="initial-scale=1.0,maximum-scale=1,user-scalable=0" />
