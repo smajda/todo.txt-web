@@ -66,7 +66,7 @@ function run_todo($cmd) {
             );
         // make projects and contexts into links for js
         $task = preg_replace(
-                    '/((@|\+)[\S]+)/', // numbers at start of task
+                    '/(\s(@|\+)[\S]+)/', // contexts (@) and projects (+)
                     '<a class="todo-tag" href="javascript:void(0);">$1</a>',
                     $task
             );
