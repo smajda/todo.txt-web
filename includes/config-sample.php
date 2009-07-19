@@ -19,6 +19,7 @@
 /* URL
  * The root URL for this site, like so:
  * $todoUrl = "http://yourdomain.com/path/to/todo/";
+ * Note: you need to use the trailing slash at the end.
 */
 $todoUrl = "";
 
