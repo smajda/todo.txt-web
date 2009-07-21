@@ -60,7 +60,7 @@ exit;
 
 session_start();
     
-if(!$_SESSION['authenticated']) {
+if(!isset($_SESSION['authenticated'])) {
 
     if (isset($_COOKIE['todotxt-user']) && isset($_COOKIE['todotxt-pass'])) {
 
@@ -71,7 +71,7 @@ if(!$_SESSION['authenticated']) {
             displayform(1);
         }
 
-    }  elseif($_POST['loginbutton']) {
+    }  elseif(isset($_POST['loginbutton'])) {
 
         if (($_POST['input_user'] == $user) && ($_POST['input_password'] == $password)) {
 
@@ -82,7 +82,7 @@ if(!$_SESSION['authenticated']) {
                 setcookie('todotxt-pass', md5($_POST['input_password']), $expire);
             } 
             $_SESSION['authenticated'] = 1;
-            header("Location:".$todoURL);
+            header("Location:".$todoUrl);
 
         } else {
             displayform(1);

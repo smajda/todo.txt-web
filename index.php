@@ -2,7 +2,7 @@
 require_once('includes/config.php');
 require_once('includes/access.php');
 require_once('includes/todo.php');
-if($_GET['logout'] == 'true') {logout();}
+if(isset($_GET['logout'])) { $_GET['logout'] == 'true' ? logout() : '';}
 $cmd = get_cmd($_POST);
 $cmd2 = get_cmd($_POST, 'cmd2');
 ?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 TRANSITIONAL//EN">
