@@ -66,7 +66,7 @@ if(!isset($_SESSION['authenticated'])) {
 
         if (($_COOKIE['todotxt-user'] == $user) && ($_COOKIE['todotxt-pass'] == md5($password))) {
             $_SESSION['authenticated'] = 1;
-            header("Location:".$_SERVER[PHP_SELF]);
+            header("Location:".$_SERVER['PHP_SELF']);
         } else {
             displayform(1);
         }
