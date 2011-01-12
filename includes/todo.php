@@ -25,7 +25,7 @@ function ls_check($cmd) {
     );
 
     // split previous command into array, so we can...
-    $cmd=split(' ', $cmd);
+    $cmd=explode(' ', $cmd);
 
     // see if the action is in the list of actions
     // that don't get a rerun of previous command
